@@ -6,11 +6,11 @@ const usuariosRouter = require('./routes/usuarios.js');
 const app  = express();
 const PORT = process.env.PORT || 3001;
 
-// ── Middlewares globales ──────────────────────────────────────────────────────
+// ── Middlewares globales
 app.use(express.json());   // Parsea el body como JSON
 app.use(logger);           // Registra cada petición en consola
 
-// ── Rutas ─────────────────────────────────────────────────────────────────────
+// ── Rutas 
 app.get('/', (req, res) => {
   res.json({
     mensaje:   'API REST funcionando correctamente',
@@ -28,10 +28,10 @@ app.use((req, res) => {
   res.status(404).json({ exito: false, mensaje: `Ruta "${req.url}" no encontrada` });
 });
 
-// ── Manejo de errores global (siempre al final) ───────────────────────────────
+// ── Manejo de errores global (siempre al final) 
 app.use(errorHandler);
 
-// ── Arrancar servidor ─────────────────────────────────────────────────────────
+// ── Arrancar servidor 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });

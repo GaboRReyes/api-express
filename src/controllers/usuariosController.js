@@ -24,7 +24,6 @@ const listarUsuarios = (req, res) => {
     resultado = resultado.filter(u => u.nombre.toLowerCase().includes(termino));
   }
 
-  // ── Paginación (Reto 4) ──────────────────────────────────────────────────
   const pagina = parseInt(req.query.pagina) || 1;   // default: página 1
   const limite = parseInt(req.query.limite) || resultado.length; // default: todo
 
